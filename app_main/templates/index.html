@@ -57,8 +57,8 @@
                 </a>
                 <div id="collapseAdministracion" class="collapse" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="usuarios.html">Usuarios</a>
-                        <a class="collapse-item" href="negocio.html">Negocio</a>
+                        <a class="collapse-item" href="{% url 'users' %}">Users</a>
+                        <a class="collapse-item" href="{% url 'business' %}">Business</a>
                     </div>
                 </div>
             </li>
@@ -71,8 +71,8 @@
                 </a>
                 <div id="collapseInventario" class="collapse" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="categorias.html">Categorias</a>
-                        <a class="collapse-item" href="productos.html">Productos</a>
+                        <a class="collapse-item" href="{% url 'categories' %}">Categorias</a>
+                        <a class="collapse-item" href="{% url 'products' %}">Productos</a>
                     </div>
                 </div>
             </li>
