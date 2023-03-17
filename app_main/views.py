@@ -22,3 +22,12 @@ def categories(request):
 
 def products(request):
     return render(request, "components/inventory/products.html")
+
+def new_sale(request):
+    return render(request, "components/sales/new_sale.html")
+
+def historical_sales(request):
+    return render(request, "components/sales/historical_sales.html")
+
+def sales_report(request):
+    return render(request, "components/report_sales/report_sales.html")

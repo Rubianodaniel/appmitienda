@@ -36,7 +36,7 @@
                 <div class="sidebar-brand-icon">
                     <i class="fas fa-desktop"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">MI TIENDA</div>
+                <div class="sidebar-brand-text mx-3">ZoeyStore</div>
             </a>
 
             <!-- Divider -->
@@ -85,8 +85,8 @@
                 </a>
                 <div id="collapseVenta" class="collapse" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="nueva_venta.html">Nueva Venta</a>
-                        <a class="collapse-item" href="historial_venta.html">Historial Venta</a>
+                        <a class="collapse-item" href="{% url 'new_sale' %}">Nueva Venta</a>
+                        <a class="collapse-item" href="{% url 'historical_sales' %}">Historial Venta</a>
                     </div>
                 </div>
             </li>
@@ -99,7 +99,7 @@
                 </a>
                 <div id="collapseReportes" class="collapse" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="reporte_venta.html">Reporte de Ventas</a>
+                        <a class="collapse-item" href="{% url 'sales_report' %}">Reporte de Ventas</a>
                     </div>
                 </div>
             </li>
