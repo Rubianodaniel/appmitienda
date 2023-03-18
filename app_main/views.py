@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.generic import View
+from .models import Usuario
 
 
 def home(request):
@@ -10,8 +12,15 @@ def dashboard(request):
     return render(request,"components/dashboard/dashboard.html")
 
 
-def users(request):
-    return render(request, "components/administration/users.html")
+class Users(View):
+    def get(self, request):
+        lst_user = Usuario.objects.all()
+        
+        context = {
+            "lst_user": lst_user
+        }
+
+        return render(request, "components/administration/users.html",context)
 
 
 def business(request):
