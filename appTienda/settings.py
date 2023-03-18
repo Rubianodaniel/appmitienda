@@ -1,6 +1,14 @@
 
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+
+
+dotenv_path = os.path.join(os.getcwd(), '.env')
+load_dotenv(dotenv_path)
+   
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -10,10 +18,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-mkegz70(^i_!#^0mwecm267w-bpioaooq^28yt2^f6iw2ax5_n'
+SECRET_KEY = os.environ.get("SECRET_KEY")
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG")
 
 ALLOWED_HOSTS = []
 
@@ -67,12 +76,11 @@ WSGI_APPLICATION = 'appTienda.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mitiendaDaniel',
-        'USER': 'rubianoDaniel',
-        'PASSWORD': 'Hades2021+',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
-
+        'NAME': os.environ.get("DATABASE_NAME"),
+        'USER': os.environ.get("DATABASE_USER"),
+        'PASSWORD': os.environ.get("DATABASE_PASSWORD"), 
+        'HOST': os.environ.get("DATABASE_HOST"),
+        'PORT': os.environ.get("DATABASE_PORT"),
     }
 }
 
@@ -116,7 +124,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "app_main/static"),)
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "appTienda/static"),)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
