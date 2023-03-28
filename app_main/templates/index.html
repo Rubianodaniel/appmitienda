@@ -25,6 +25,16 @@
 
 <body id="page-top">
 
+    {% if messages %}
+        {% for mesagge in mesagges %}
+            <div class = notification>
+                {{mesagge}}
+            </div>
+            
+        {% endfor %}
+        
+    {% endif %}
+
     <!-- Page Wrapper -->
     <div id="wrapper">
 
